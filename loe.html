@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Love Letter for You</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            text-align: center;
+            background-color: #fdf6e3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+            margin: auto;
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #d95d39;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #d95d39;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #bf4e33;
+        }
+        #yes {
+            background-color: #d95d39;
+            color: white;
+        }
+        #no {
+            background-color: #ccc;
+            color: black;
+            position: relative;
+        }
+        #no:hover {
+            background-color: #333;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+        .spotify-link {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #1db954;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .spotify-link:hover {
+            color: #1aa34a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Love Letter Section -->
+    <div id="loveLetter" class="container">
+        <h1>This is how you made my day, my everyday.</h1>
+        <p>Dear Yaue,</p>
+        <p>
+            First time ko mag create ug usa ka letter for someone, for special someone. To be honest here, dili jud ko hawd aning mga letters lol, I cannot express my feelings and care for someone kay mas gina-express nako akong feelings towards my action.
+        </p>
+        <p>
+            I still believe one day ma-express na nako akong feelings to someone with my words because action is nothing without a words, some may say (pramis nadunggan ko rana sa lain) and I realize true the fire siya HAHAHAHAHA. 
+        </p>
+        <p>
+            This is how you made my day, yau. You made my each day more bearable when I'm talking to you. You made my each day more lightweight. Ga-listen jud ka sakong mga chika even though wala na kay ika-reply ato and it's still okay. How you made my heart flutter (flutter?!) every time you called me 'beb'. How you made my day more colorful in a monochrome day (dafat lang monochrome and definition sa college days). You still made my heart flatter when I received your good morning to good night messages. Your daily water reminders. How you made me happier in each day and I do hope you do too. 
+        </p>
+        <p>
+            I am not that perfect person, but I want to be a better person for you, Yau. I know life isn’t always easy, but with you, it feels like any challenge can be met with courage. I just want you to know how much I admire, respect, and care for you. You truly are one of a kind. I hope you best in life and I'm hoping to be with you in your best life :) 
+        </p>
+        <p>With all my heart,</p>
+        <p>Gen</p>
+        <button onclick="showNext()">Continue &rarr;</button>
+    </div>
+
+    <!-- Girlfriend Proposal Section -->
+    <div id="proposal" class="container hidden">
+        <h1>Be Mine?</h1>
+        <p>
+            After all I’ve said, I hope you now understand just how much you mean to me. So, here’s my question: will you be my bugtong itik sa malapukon kong dughan? HAHHAHAHAHAHA ril question na this ehem. Will you be my amazing person who lights up my life in every single day?
+        </p>
+        <button id="yes" onclick="acceptProposal()">YES! 💖</button>
+        <button id="no" onmouseover="moveButton()" onclick="moveButton()">No... 😅</button>
+        <p id="response" style="margin-top: 20px; font-size: 1.2em; color: #444;"></p>
+        <p id="spotify" class="spotify-link hidden">
+            <a href="https://open.spotify.com/playlist/5swER7AHc9iLH5IZkAjGRX?si=KKh_H9t5QkKXxfZsOm6w0w&pt=519c60178b94e8aa5ed66b24de286f9c&pi=a-7HTMvdpGSLir" target="_blank" style="text-decoration: none;">this for you <3</a>
+        </p>
+    </div>
+
+    <script>
+        // Show the girlfriend proposal section
+        function showNext() {
+            document.getElementById('loveLetter').classList.add('hidden');
+            document.getElementById('proposal').classList.remove('hidden');
+        }
+
+        // Handle "YES" button click
+        function acceptProposal() {
+            document.getElementById('response').innerText = "Wala nay bawian, ha mag cry jud ko ): HAHAHHAHHA";
+            document.getElementById('spotify').classList.remove('hidden');
+        }
+
+        // Make the "No" button jump around
+        function moveButton() {
+            const noButton = document.getElementById('no');
+            const maxX = window.innerWidth - noButton.offsetWidth;
+            const maxY = window.innerHeight - noButton.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
